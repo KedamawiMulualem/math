@@ -1,0 +1,43 @@
+
+#include <iostream>
+#include<cmath>
+/*
+
+The Collatz conjecture is a conjecture in mathematics named after Lothar Collatz. 
+It can be summarized as follows. Take any positive integer n. 
+If n is even, divide it by 2 to get n / 2. If n is odd, multiply it by 3 and add 1 to obtain 3n + 1. 
+Repeat the process indefinitely. The conjecture is that no matter what number you start with, 
+you will always eventually reach 1. 
+
+*/
+
+//this program will calculet and show every number on Collatz conjecture
+
+using namespace std;
+
+int main() {
+
+
+	int num ,  numa, counter = 0;
+	cout << "enter the number you want to see the Collatz conjecture steps to reach 1  " << endl;
+	cin >> num;
+	cout << "the numbers in each step of " << num << " to reach 1 is shown and the number of steps to reach one is shown at the end" << endl ;
+	while (num != 1) {
+
+		if (num % 2 == 0 && num > 0)
+		{
+			cout <<num<< "(even)"<<endl;
+			num = num / 2; ;
+		}
+		else if (num % 2 != 0 && num > 0) {
+			cout<< num << "(odd)"<<endl;	num = (num * 3) + 1;
+		}counter++; if (counter == 1) {numa = num; }
+
+	}
+
+	cout <<endl<< "num of steps:" << counter << endl<<endl;
+
+
+	system("pause");
+	return 0;
+}
