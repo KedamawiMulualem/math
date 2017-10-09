@@ -1,49 +1,32 @@
 #include<iostream>
-#include<cmath>
-#include <fstream>
+#include <string>
 using namespace std;
-bool is_prime(int num) {
-	int numa = sqrt(num);
-	if (num == 0) {
-		return false;
-	}
-	if (num == 1){
-		return false;
-	}
-	if (num == 2) { 
-		return true;
-	}
-	if (num % 2 == 0) { 
-		return false; 
-	}
-	
-	if (numa % 2 == 0) {
-		numa -= 1;
-	}
-		while (numa != 1) {
-			if (num % numa == 0 && numa > 0)
-			{
-				return false;
-
-			}
-			numa -= 2;
-			
+int to_int(string input) {
+	int k = input.size();
+	int input_,
+		input_2=0;
+	for (int i = 0; i < k; i++) {
+		int mul;
+		if (i >= 1) {
+			mul = 10;
 		}
+		else
+			mul = 1;
+		input_ = int(input[i]) - 48;
+		cout << input_ << endl;
+		input_2 *= mul;
+		//add the prefix to a variable
+		input_2 += input_;
 
-		return true;
-	
+
+
+	}
+	return input_2;
+
 }
 void main() {
-	ofstream myfile;
-	myfile.open("prime_t.txt");
-	for (long long int i = 0; i < 10000000000000000000; i++) {
-
-		if (is_prime(i)) {
-			myfile << i << endl;
-			cout << i << endl;
-		}
-	}
-	
-
+	string kd;
+	cin >> kd;
+	cout << to_int(kd)+1 << endl;
 	system("pause");
 }
